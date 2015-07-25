@@ -169,7 +169,6 @@ if (isset($_POST['username'])) {
                                             <li><a href="#">Something else here</a></li>
                                             <li class="divider"></li>
                                             <li class="dropdown-header">Utilities</li>
-                                            <li><a href="connect.php">Test Database Connection</a></li>
                                             <li><a href="mysql_connect_quicktest.php">Test Database Connection PHP</a></li>
                                         </ul>
                                     </li>
