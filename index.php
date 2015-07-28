@@ -39,20 +39,19 @@ $connect->closeConnection();
     </head>
     <body onload="clock()">
 
-        <div class="container">
+        <div class="container text-center">
             <div class = "col-md-offset-4 col-md-4">
                 <h1>Database Tester</h1>
                 <h6><?php
                     $sql = "SELECT NAME, POPULATION FROM COUNTRY WHERE POPULATION >= 10000000 GROUP BY POPULATION DESC;";
-                    $result = mysqli_query($sql);
-
+                    $result = $connect->getLink($sql);
                     if ($result->num_rows > 0) {
                         // output data of each row
                         while ($row = $result->fetch_assoc()) {
-                            echo " COUNTRY NAME: " . $row["NAME"] . " - POPULATION: " . $row["POPULATION"] . "<br>";
+                            echo "COUNTRY NAME: " . $row["NAME"] . " - POPULATION: " . $row["POPULATION"] . "<br>";
                         }
                     } else {
-                        echo "0 results";
+                        echo "NO ROWS AVAILABLE";
                     }
                     ?>
                 </h6>
