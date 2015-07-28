@@ -1,0 +1,15 @@
+# Database Tester
+##Developer Test Area
+
+###Current Website Host Info
+
+######PHP LATEST STABLE: 5.6.11
+######MYSQL LATEST STABLE: 5.6.25
+######PHPMYADMIN LATEST STABLE: 4.4.11
+######WORDPRESS LATEST STABLE: 4.2.2
+
+####LOCALHOST
+######PHP: 5.6.10 MYSQLI EXTENSION
+######MYSQL: 5.5.42
+######PHPMYADMIN: 4.4.9
+######SSH ROOT ALLOWED

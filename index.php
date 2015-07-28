@@ -1,7 +1,14 @@
 <?php
 require_once 'php/DatabaseConnection.php';
+require_once "php/ContactFormReport.php";
+
 $connect = new DatabaseConnector();
-$connect->setLink();
+$connect->connect();
+
+$report = new ContactFormReport();
+$report->setConn($connect->getConnection());
+$report->query();
+
 $connect->closeConnection();
 ?>
 <!DOCTYPE html>
@@ -39,20 +46,12 @@ $connect->closeConnection();
     </head>
     <body onload="clock()">
 
-        <div class="container text-center">
+        <div class="container">
             <div class = "col-md-offset-4 col-md-4">
-                <h1>Database Tester</h1>
+                <h1 class="text-center">Database Tester</h1>
                 <h6><?php
-                    $sql = "SELECT NAME, POPULATION FROM COUNTRY WHERE POPULATION >= 10000000 GROUP BY POPULATION DESC;";
-                    $result = $connect->getLink($sql);
-                    if ($result->num_rows > 0) {
-                        // output data of each row
-                        while ($row = $result->fetch_assoc()) {
-                            echo "COUNTRY NAME: " . $row["NAME"] . " - POPULATION: " . $row["POPULATION"] . "<br>";
-                        }
-                    } else {
-                        echo "NO ROWS AVAILABLE";
-                    }
+                    echo $report->getReport();
+                    echo $connect->getConnectionInfo();
                     ?>
                 </h6>
                 <h6>&copy <?php echo date('Y'); ?> Rolando Moreno</h6>
