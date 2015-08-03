@@ -29,9 +29,9 @@ class ContactFormReport {
      */
     public function getReport() {
         for ($i = 0; $i < mysqli_num_rows($this->result); $i++) {
-            $row = mysqli_fetch_assoc($this->result);
-            foreach ($row as $x => $x_value) {
-                echo $x . " = " . $x_value;
+            $tableRow = mysqli_fetch_assoc($this->result);
+            foreach ($tableRow as $column => $column_value) {
+                echo $column . " = " . $column_value;
                 echo "<br>";
             }
             echo "<br>";
