@@ -50,17 +50,17 @@ $connect->closeConnection();
             <div class = "col-md-offset-4 col-md-4">
                 <img class="img-responsive" src="images/MPS final logo-01.svg" alt="MPS Logo">
                 <h1 class="text-center">Database Tester</h1>
-                <div class="table-responsive"></div>
-                <table class="table table-striped">
-                    <tr>
-                        <th>Country</th>
-                        <th>Population</th>
-                    </tr>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <tr>
+                            <th>Country</th>
+                            <th>Population</th>
+                        </tr>
                         <?php
                         echo $report->getReport();
-                        echo $connect->getConnectionInfo();
                         ?>
-                </table>
+                    </table>
+                </div>
 
                 <h6>&copy <?php echo date('Y'); ?> Rolando Moreno</h6>
             </div>
