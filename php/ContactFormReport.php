@@ -28,13 +28,14 @@ class ContactFormReport {
      * 
      */
     public function getReport() {
-        for ($i = 0; $i < mysqli_num_rows($this->result); $i++) {
-            $tableRow = mysqli_fetch_assoc($this->result);
-            foreach ($tableRow as $column => $column_value) {
-                echo $column . " = " . $column_value;
-                echo "<br>";
-            }
-            echo "<br>";
+//        for ($i = 0; $i < mysqli_num_rows($this->result); $i++) {
+//            $tableRow = mysqli_fetch_assoc($this->result);
+//            foreach ($tableRow as $column => $column_value) {
+//                echo "<tr><td>" . $column_value . "</td><td>" . $column_value ."</td></tr>";
+//            }
+//        }
+        while ($tableRow = mysqli_fetch_assoc($this->result)) {
+            echo "<tr><td>" . $tableRow["NAME"] . "</td><td>" . $tableRow["POPULATION"] . "</td></tr>";
         }
     }
 
