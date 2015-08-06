@@ -23,7 +23,7 @@ $connect->closeConnection();
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="Skeleton Website">
         <meta name="author" content="Rolando Moreno">
-        <title>Database Tester</title>
+        <title>Database Tester Connected to world db</title>
 
         <link rel="icon" type="image/png" href="images/bhLogo.png">
 
