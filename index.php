@@ -50,6 +50,7 @@ $connect->closeConnection();
             <div class = "col-md-offset-4 col-md-4">
                 <img class="img-responsive" src="images/MPS final logo-01.svg" alt="MPS Logo">
                 <h1 class="text-center">Database Tester</h1>
+                <h6><?php echo $connect->getConnectionInfo(); ?></h6>
                 <div class="table-responsive">
                     <table class="table table-striped">
                         <tr>

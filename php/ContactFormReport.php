@@ -13,6 +13,10 @@ class ContactFormReport {
     private $sql = "CALL TOP_TEN";
     private $result = '';
 
+    /**
+     * 
+     * @param type $conn
+     */
     public function setConn($conn) {
         $this->conn = $conn;
     }
@@ -21,7 +25,7 @@ class ContactFormReport {
      * This queries the database to select all records from contact form table
      */
     public function query() {
-        $this->result = mysqli_query($this->conn, $this->sql); //How is this implemented in mysqli
+        $this->result = $this->conn->query($this->sql); //How is this implemented in mysqli
     }
 
     /**
@@ -34,7 +38,7 @@ class ContactFormReport {
 //                echo "<tr><td>" . $column_value . "</td><td>" . $column_value ."</td></tr>";
 //            }
 //        }
-        while ($tableRow = mysqli_fetch_assoc($this->result)) {
+        while ($tableRow = $this->result->fetch_assoc()) {
             echo "<tr><td>" . $tableRow["NAME"] . "</td><td>" . $tableRow["POPULATION"] . "</td></tr>";
         }
     }
